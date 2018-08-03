@@ -21,7 +21,7 @@ export function fetchCheesesError(error) {
 
 export const fetchCheeses = () => dispatch => {
     dispatch(fetchCheesesRequest());
-    return fetch(`${API_BASE_URL}/api/cheeses`).then(res => {
+    return fetch(`${API_BASE_URL}`).then(res => {
         if (!res.ok) {
             return new Error(res.statusText);
             //Promise.reject('Something went wrong');
