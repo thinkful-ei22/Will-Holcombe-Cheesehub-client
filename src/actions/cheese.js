@@ -2,8 +2,9 @@ import { API_BASE_URL } from '../config';
 //Compare to Richard's setup
 export const FETCH_CHEESES_REQUEST ='FETCH_CHEESES_REQUEST';
 export function fetchCheesesRequest(){
-    return { type: FETCH_CHEESES_REQUEST}
-    
+    return { 
+        type: FETCH_CHEESES_REQUEST
+    }
 }
 
 export const FETCH_CHEESES_SUCCESS = "FETCH_CHEESES_SUCCESS";
@@ -32,4 +33,6 @@ export const fetchCheeses = () => dispatch => {
         dispatch(fetchCheesesError(err))
     );
 }
- //data and err
+ //data and err//when using fetch need thunk -> "will be available in a few seconds"
+ //if dealing with static data, all actions use return plain js object
+ //if using synch we need redux thunk in our reducer (store) 
